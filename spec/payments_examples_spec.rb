@@ -218,9 +218,9 @@ describe "Payments" do
       end
     end
 
-    describe "CreditCard" do
+    describe "PaypalCreditCard" do
       it "Create" do
-        credit_card = CreditCard.new({
+        credit_card = PaypalCreditCard.new({
           "type" =>  "visa",
           "number" =>  "4417119669820331",
           "expire_month" =>  "11", "expire_year" =>  "2018",
@@ -235,13 +235,13 @@ describe "Payments" do
         credit_card.error.should be_nil
         credit_card.id.should_not be_nil
 
-        credit_card = CreditCard.find(credit_card.id)
-        credit_card.should be_a CreditCard
+        credit_card = PaypalCreditCard.find(credit_card.id)
+        credit_card.should be_a PaypalCreditCard
         credit_card.error.should be_nil
       end
 
       it "Delete" do
-        credit_card = CreditCard.new({
+        credit_card = PaypalCreditCard.new({
           "type" =>  "visa",
           "number" =>  "4417119669820331",
           "expire_month" =>  "11", "expire_year" =>  "2018" })
@@ -251,7 +251,7 @@ describe "Payments" do
 
       describe "Validation" do
         it "Create" do
-          credit_card = CreditCard.new({
+          credit_card = PaypalCreditCard.new({
             "type" =>  "visa",
             "number" =>  "4111111111111111" })
           credit_card.create

@@ -92,12 +92,12 @@ module PayPal::SDK
       class FundingInstrument < Base
 
         def self.load_members
-          object_of :credit_card, CreditCard
-          object_of :credit_card_token, CreditCardToken
+          object_of :credit_card, PaypalCreditCard
+          object_of :credit_card_token, PaypalCreditCardToken
         end
 
       end
-      class CreditCard < Base
+      class PaypalCreditCard < Base
 
         def self.load_members
           object_of :id, String
@@ -177,7 +177,7 @@ module PayPal::SDK
         end
 
       end
-      class CreditCardToken < Base
+      class PaypalCreditCardToken < Base
 
         def self.load_members
           object_of :credit_card_id, String
@@ -439,10 +439,10 @@ module PayPal::SDK
         end
 
       end
-      class CreditCardHistory < Base
+      class PaypalCreditCardHistory < Base
 
         def self.load_members
-          array_of  :"credit-cards", CreditCard
+          array_of  :"credit-cards", PaypalCreditCard
           object_of :count, Integer
           object_of :next_id, String
         end

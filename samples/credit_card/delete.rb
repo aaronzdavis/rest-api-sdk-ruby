@@ -3,7 +3,7 @@ include PayPal::SDK::REST
 include PayPal::SDK::Core::Logging
 
 begin
-  @credit_card = CreditCard.find("CARD-7LT50814996943336KESEVWA")
+  @credit_card = PaypalCreditCard.find("CARD-7LT50814996943336KESEVWA")
 
   if @credit_card.delete
     logger.info "CreditCard[#{@credit_card.id}] deleted successfully"

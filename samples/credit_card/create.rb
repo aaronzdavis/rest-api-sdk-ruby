@@ -11,7 +11,7 @@ require 'paypal-sdk-rest'
 include PayPal::SDK::REST
 include PayPal::SDK::Core::Logging
 
-@credit_card = CreditCard.new({
+@credit_card = PaypalCreditCard.new({
    # ###CreditCard
    # A resource representing a credit card that can be
    # used to fund a payment.

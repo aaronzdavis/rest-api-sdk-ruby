@@ -11,7 +11,7 @@ begin
   # Retrieve the CreditCard  by calling the
   # static `find` method on the CreditCard class,
   # and pass CreditCard ID
-  @credit_card = CreditCard.find("CARD-5BT058015C739554AKE2GCEI")
+  @credit_card = PaypalCreditCard.find("CARD-5BT058015C739554AKE2GCEI")
   logger.info "Got CreditCard[#{@credit_card.id}]"
 rescue ResourceNotFound => err
   logger.error "CreditCard Not Found"
