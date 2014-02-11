@@ -145,9 +145,9 @@ describe "Payments" do
       end
 
       it "Find" do
-        sale = Sale.find(@payment.transactions[0].related_resources[0].sale.id)
+        sale = PaypalSale.find(@payment.transactions[0].related_resources[0].sale.id)
         sale.error.should be_nil
-        sale.should be_a Sale
+        sale.should be_a PaypalSale
       end
 
       describe "instance method" do

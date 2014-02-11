@@ -1,10 +1,10 @@
 # #CreateCreditCard Sample
-# Using the 'vault' API, you can store a 
+# Using the 'vault' API, you can store a
 # Credit Card securely on PayPal. You can
 # use a saved Credit Card to process
 # a payment in the future.
-# The following code demonstrates how 
-# can save a Credit Card on PayPal using 
+# The following code demonstrates how
+# can save a Credit Card on PayPal using
 # the Vault API.
 # API used: POST /v1/vault/credit-card
 require 'paypal-sdk-rest'
@@ -36,7 +36,7 @@ include PayPal::SDK::Core::Logging
 # Make API call & get response status
 # ###Save
 # Creates the credit card as a resource
-# in the PayPal vault. 
+# in the PayPal vault.
 if @credit_card.create
   logger.info "CreditCard[#{@credit_card.id}] created successfully"
 else

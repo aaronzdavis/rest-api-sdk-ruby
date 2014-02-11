@@ -108,7 +108,7 @@ module PayPal::SDK
           object_of :cvv2, String
           object_of :first_name, String
           object_of :last_name, String
-          object_of :billing_address, Address
+          object_of :billing_address, PaypalAddress
           object_of :payer_id, String
           object_of :state, String
           object_of :valid_until, String
@@ -140,7 +140,7 @@ module PayPal::SDK
         end
 
       end
-      class Address < Base
+      class PaypalAddress < Base
 
         def self.load_members
           object_of :line1, String
@@ -197,7 +197,7 @@ module PayPal::SDK
           object_of :last_name, String
           object_of :payer_id, String
           object_of :phone, String
-          object_of :shipping_address, Address
+          object_of :shipping_address, ShippingPayPalAddress
         end
 
       end
@@ -252,7 +252,7 @@ module PayPal::SDK
         end
 
       end
-      class ShippingAddress < Address
+      class ShippingPayPalAddress < PaypalAddress
 
         def self.load_members
           object_of :recipient_name, String
@@ -263,21 +263,21 @@ module PayPal::SDK
 
         def self.load_members
           array_of  :items, Item
-          object_of :shipping_address, ShippingAddress
+          object_of :shipping_address, ShippingPayPalAddress
         end
 
       end
       class RelatedResources < Base
 
         def self.load_members
-          object_of :sale, Sale
+          object_of :sale, PaypalSale
           object_of :authorization, Authorization
           object_of :capture, Capture
           object_of :refund, Refund
         end
 
       end
-      class Sale < Base
+      class PaypalSale < Base
 
         def self.load_members
           object_of :id, String

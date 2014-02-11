@@ -7,7 +7,7 @@ require 'paypal-sdk-rest'
 include PayPal::SDK::REST
 include PayPal::SDK::Core::Logging
 
-@sale = Sale.find("7DY409201T7922549")
+@sale = PaypalSale.find("7DY409201T7922549")
 
 # Make Refund API call
 # Set amount only if the refund is partial
